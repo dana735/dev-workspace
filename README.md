@@ -1,43 +1,66 @@
-# dev-workspace
-개발자 작업실 꾸미기 과제
+# 💻 내 컴퓨터에 개발자용 '작업실' 꾸미기
 
-> 본 문서는 도커 및 클라우드 개발환경(GitHub Codespaces)을 활용한 과제 수행 결과 기술 문서입니다.
-
----
-
-## 1. 프로젝트 개요 및 미션
-- 프로젝트 개요: 도커 기반 컨테이너 실행 및 개발 환경 구축 실습
-- 과제 미션: 깃허브 저장소를 통한 도커 컨테이너 빌드 및 검증 과정 문서화
-- 학습 목표: 
-  - 도커 이미지 및 컨테이너 라이프사이클 이해
-  - Dockerfile 작성 및 포트/볼륨 바인딩 실습
-  - Git / GitHub를 활용한 버전 관리 및 형상 관리
+## 1. 프로젝트 개요 (미션 목표 요약)
+- **목적**: GitHub Codespaces 및 Linux 환경을 기반으로 개발에 필요한 기본 터미널 조작, 파일 권한 관리, Docker 컨테이너 빌드·운영, 그리고 Git/GitHub 연동을 수행하고 이를 기술 문서로 기록한다.
 
 ---
 
-## 2. 실행 환경 정보 (Environment)
-- OS (Operating System): Linux (GitHub Codespaces 컨테이너 환경)
-- Shell: Bash
-- Terminal: VS Code Integrated Terminal
-- Docker Version: (터미널에서 `docker --version` 입력 후 결과 기입)
-- Git Version: (터미널에서 `git --version` 입력 후 결과 기입)
+## 2. 실행 환경
+- **OS / 셸**: Linux (GitHub Codespaces) / Bash
+- **Docker 버전**: (`docker --version` 결과 기입)
+- **Git 버전**: (`git --version` 결과 기입)
 
 ---
 
-## 3. 수행 항목 및 체크리스트
-- [x] GitHub 공개(Public) 레포지토리 생성 및 코드스페이스 연결
-- [x] 도커(Docker) 기본 명령어 및 버전 확인 완료
-- [x] Dockerfile 작성 및 커스텀 이미지 빌드
-- [x] 컨테이너 실행 시 포트포워딩 및 볼륨(Volume) 마운트 적용
-- [x] Git을 이용한 커밋 및 깃허브 원격 저장소 푸시 완료
-
+## 3. 수행 항목 체크리스트
+- [x] 터미널 기본 조작 (위치 확인, 파일/디렉토리 생성·이동·삭제 등)
+- [x] 파일 및 디렉토리 권한 설정 및 변경 실습 (`chmod`)
+- [x] Docker 설치 및 기본 점검 (`docker --version`, `docker info`)
+- [x] Docker 기본 운영 명령어 수행 (`docker images`, `docker ps -a`, `docker logs`)
+- [x] 컨테이너 실행 실습 (`hello-world`, `ubuntu` 컨테이너 진입 등)
+- [x] 기존 Dockerfile 기반 커스텀 이미지 제작 및 빌드/실행 성공
+- [ ] 포트 매핑 (`-p`) 및 브라우저 접속 성공 증거 첨부
+- [ ] 바인드 마운트 및 Docker 볼륨 영속성 검증
+- [x] Git 설정 및 GitHub 연동 완료
+- 
 ---
 
-## 4. 핵심 구현 내용 및 검증 방법
-> 각 항목별 수행 명령과 확인 방법을 기술합니다.
+## 4. 터미널 조작 로그 기록
+```bash
+# 현재 위치 확인
+pwd
 
-### [A] Dockerfile 작성 및 빌드
-- 작성 내용: Ubuntu/Python 기반 가볍고 안정적인 베이스 이미지 설정 및 작업 디렉토리 지정
-- 실행 명령:
-  ```bash
-  docker build -t dev-env:latest .
+# 숨김 파일 포함 목록 확인
+ls -la
+
+# 디렉토리 생성 및 이동
+mkdir workspace
+cd workspace
+
+# 빈 파일 생성 및 내용 확인
+touch test.txt
+echo "Hello Codespaces" > test.txt
+cat test.txt
+
+# 파일 복사, 이름 변경 및 삭제
+cp test.txt test_backup.txt
+mv test_backup.txt final.txt---
+
+## 5. 권한 실습 및 증거 기록
+```bash
+# 실습 파일 및 디렉토리 생성
+touch test_file.txt
+mkdir test_dir
+
+# 변경 전 권한 확인
+ls -l test_file.txt
+ls -ld test_dir
+
+# 권한 변경 (파일: 744, 디렉토리: 755)
+chmod  test_file.txt
+chmod  test_dir
+
+# 변경 후 권한 확인 결과
+ls -l test_file.txt
+ls -ld test_dir
+
