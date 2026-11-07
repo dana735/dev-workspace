@@ -49,7 +49,8 @@ mv test_backup.txt final.txt
 rm final.txt
 
 
-5. 권한 실습 및 증거 기록
+##5. 권한 실습 및 증거 기록
+'''bash
 # 실습 파일 및 디렉토리 생성
 touch sample_file.txt
 mkdir sample_dir
@@ -62,10 +63,12 @@ chmod 755 sample_dir
 ls -ld sample_file.txt sample_dir
 
 6. Docker 설치 및 기본 점검
+
 docker --version
 docker info
 
 7. Docker 기본 운영 명령어 및 컨테이너 실행 실습
+
 docker images
 docker ps -a
 docker run hello-world
@@ -73,7 +76,8 @@ docker run -it ubuntu bash
 
 8. 기존 Dockerfile 기반 커스텀 이미지 제작
 - 선택한 베이스 이미지: NGINX 베이스 이미지 활용
-- 빌드 및 실행 명령어:  
+- 빌드 및 실행 명령어:
+
   docker build -t my-custom-nginx .
   docker run -d -p 80:80 --name custom-web-server my-custom-nginx
 
@@ -82,10 +86,12 @@ docker run -it ubuntu bash
   curl http://localhost:80
 
 10. 바인드 마운트 반영 + Docker 볼륨 영속성 검증
+
 docker volume create my_data_vol
 docker run -d --name vol-test -v my_data_vol:/data nginx
 
 11. Git 설정 및 GitHub 연동 증거
+
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
 git config --global init.defaultBranch main
