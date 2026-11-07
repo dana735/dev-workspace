@@ -30,17 +30,20 @@
 
 ```bash
 # 현재 위치 확인
-pwd
+cd
 
-# 지금 위치: C:\Users\홍길동
-cd Desktop
-# 이동 후:  C:\Users\홍길동\Desktop (바탕화면)
+#폴더 생성
+mkdir pracetice
+
+지금 위치: C:\Users\임미정\dev-workspace
+cd dev-workspace
+# 이동 후:  C:\Users\임미정\dev-workspace
 
 #디렉토리 생성및 이동
 
- mkdir 코딧다나 
- cd 코딧다나
-C:\Users\홍길동\Desktop\코딧다나>
+ mkdir scripts  
+ cd scripts
+C:\Users\임미정\dev-workspace\scritps>
 
 # 숨김 파일 포함 목록 확인
 ls -la
@@ -48,7 +51,7 @@ ls -la
 
 # 빈 파일 생성 및 내용 확인
 touch test.txt
-echo "Hello Codespaces" > test.txt
+echo "Hello,World!" > test.txt
 cat test.txt
 
 # 파일 복사, 이름 변경 및 삭제
@@ -104,10 +107,6 @@ git config --global user.name "임미정"
 git config --global user.email "lightview11@naver.com"
 git config --list
 git clone https://github.com/dana735/dev-workspace.git
-
-
-
-
 
 
 12. 보안 및 개인정보 보호
