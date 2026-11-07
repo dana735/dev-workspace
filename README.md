@@ -27,16 +27,24 @@
 ---
 
 ## 4. 터미널 조작 로그 기록
+
 ```bash
 # 현재 위치 확인
 pwd
 
+# 지금 위치: C:\Users\홍길동
+cd Desktop
+# 이동 후:  C:\Users\홍길동\Desktop (바탕화면)
+
+#디렉토리 생성및 이동
+
+ mkdir 코딧다나 
+ cd 코딧다나
+C:\Users\홍길동\Desktop\코딧다나>
+
 # 숨김 파일 포함 목록 확인
 ls -la
 
-# 디렉토리 생성 및 이동
-mkdir workspace
-cd workspace
 
 # 빈 파일 생성 및 내용 확인
 touch test.txt
@@ -92,10 +100,15 @@ docker run -d --name vol-test -v my_data_vol:/data nginx
 
 11. Git 설정 및 GitHub 연동 증거
 
-git config --global user.name "Your Name"
-git config --global user.email "your_email@example.com"
-git config --global init.defaultBranch main
+git config --global user.name "임미정"
+git config --global user.email "lightview11@naver.com"
 git config --list
+git clone https://github.com/dana735/dev-workspace.git
+
+
+
+
+
 
 12. 보안 및 개인정보 보호
 민감 정보(토큰, 비밀번호 등) 노출 없음 확인 완료
