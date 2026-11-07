@@ -48,22 +48,33 @@ cp test.txt test_backup.txt
 mv test_backup.txt final.txt
 rm final.txt
 
-##5. 권한 실습 및 증거 기록
+**5. 권한 실습 및 증거 기록**
+
 ```bash
 # 실습 파일 및 디렉토리 생성
-touch sample_file.txt
+touch test_file.txt
 mkdir sample_dir
 
 # 변경 전 권한 확인
 ls -l test_file.txt
 
-
-# 권한 변경 (파일: 744, 디렉토리: )
+# 권한 변경 (파일: 744, 디렉토리: 755)
 chmod 744 test_file.txt
-
+chmod 755 sample_dir
 
 # 변경 후 권한 확인 결과
-ls -l test_file.txt##
+ls -ld test_file.txt sample_dir
+
+# 변경 전 권한 확인
+ls -l test_file.txt
+
+# 권한 변경 (파일: 744, 디렉토리: 755)
+chmod 744 test_file.txt
+chmod 755 sample_dir
+
+# 변경 후 권한 확인 결과
+ls -ld test_file.txt sample_dir
+
 
 6. Docker 설치 및 기본 점검
 ```bash
