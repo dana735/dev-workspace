@@ -59,6 +59,9 @@ cp test.txt test_backup.txt
 mv test_backup.txt final.txt
 rm final.txt
 
+<img width="534" height="258" alt="image" src="https://github.com/user-attachments/assets/fb642413-b6a4-4d15-a388-8480816db2fc" />
+
+
 
 ##5. 권한 실습 및 증거 기록
 '''bash
