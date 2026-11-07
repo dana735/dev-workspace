@@ -48,27 +48,18 @@ cp test.txt test_backup.txt
 mv test_backup.txt final.txt
 rm final.txt
 
-4. 터미널 기록 기록
-# 현재 위치 확인pwd# 숨김 파일 포함 목록 확인
-ls -la# 디렉토리 생성 및 이동
-mkdir workspacecd workspace# 빈 파일 생성 및 내용 확인
-touch test.txtecho "Hello Codespaces" > test.txt
-cat test.txt# 파일 복사, 이름 변경 및 삭제
-cp test.txt test_backup.txt
-mv test_backup.txt final.txt
-rm final.txt
 
 5. 권한 실습 및 증거 기록
 # 실습 파일 및 디렉토리 생성
 touch sample_file.txt
 mkdir sample_dir
 # 변경 전 권한 확인
-ls -l test_file.txt
+ls -l sample_file.txt
 # 권한 변경 (파일: 744, 디렉토리: 755)
-chmod 744 test_file.txt
+chmod 744 sample_file.txt
 chmod 755 sample_dir
 # 변경 후 권한 확인 결과
-ls -ld test_file.txt sample_dir
+ls -ld sample_file.txt sample_dir
 
 6. Docker 설치 및 기본 점검
 docker --version
