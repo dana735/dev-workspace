@@ -176,6 +176,7 @@ mv memo.txt secret/❤
   docker run -d -p 80:80 --name custom-web-server my-custom-nginx
 
 9. 포트 매핑 및 접속 증거😊
+
 # -d: 백그라운드 실행 (Detached mode)
 # -p 8080:80: 내 컴퓨터의 8080 포트를 컨테이너의 80 포트로 연결
 docker run -d -p 8080:80 --name my-server nginx
