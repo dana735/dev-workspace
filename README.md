@@ -184,6 +184,9 @@ docker run -d -p 8080:80 --name my-server nginx
 
 - -p 80:80 포트 매핑 설정 및 접속 확인
   curl http://localhost:80
+
+<img width="1258" height="314" alt="스크린샷(1) png1" src="https://github.com/user-attachments/assets/a9b901f3-d73f-4827-b0f2-a74d0209b6dd" />
+
 <img width="387" height="168" alt="image" src="https://github.com/user-attachments/assets/7ddb9be6-94df-48c9-ae27-cad74286ca4f" />
 <img width="1280" height="1024" alt="image" src="https://github.com/user-attachments/assets/40b5d99d-984d-4f1e-a775-a89c2a3781d1" />
 
