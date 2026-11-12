@@ -6,6 +6,7 @@
 ---
 
 ## 2. 실행 환경
+
 - **OS / 셸**: Linux (GitHub Codespaces) / Bash
 - **Docker 버전**: (`docker --version` 결과 기입)
 - **Git 버전**: (`git --version` 결과 기입)
