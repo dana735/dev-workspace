@@ -181,7 +181,7 @@ ls -l apple.txt
 
 ## 6. Docker 설치 및 기본 점검 Dockerfile
 
-# 1 docker –version
+## 1 docker –version
 
 버전 표시
 
@@ -192,7 +192,7 @@ docker run hello-world
 
 “HELLO from Docker!”
 
-# 2 이미지 컨테이너 목록 확인및 정리 흔적이 있는가
+## 2 이미지 컨테이너 목록 확인및 정리 흔적이 있는가
 
 docker ps -a all
 
@@ -200,13 +200,13 @@ NAME hello-world 컨테이너 STATUS Exited 실행흔적 뜻 잘실행
 
 image
 
-# 3 이미지 목록 확인
+## 3 이미지 목록 확인
 
 docker images
 
 레지스토리에 hello-world 보임
 
-# 4 컨테이너 삭제
+## 4 컨테이너 삭제
 
 docker rm [컨테이너_ID] 도커는 아이디 앞 세자리만 해도 됨
 
@@ -220,7 +220,7 @@ docker rmi hello-world my-web-server
 
 ㅇocker system prune 한번에 지우기
 
-# 5 확인
+## 5 확인
 
 docker ps -a
 
@@ -230,7 +230,7 @@ image
 
 ## 6 Dockfile
 
-# 1 실습용 파일
+## 1 실습용 파일
 
 mkdir my-web-site
 
@@ -238,7 +238,7 @@ cd my-web-site
 
 현재 위치 ~ my-web-site 폴더에 잘 들어옴
 
-# 2 간단한 HTML 파일 만들기
+## 2 간단한 HTML 파일 만들기
 
 echo “” > index.html
 
@@ -255,7 +255,7 @@ cat Dockerfile
 
 도커 파일 보여줘
 
-# 3 도커파일 작성하기
+## 3 도커파일 작성하기
 
 nano Dockerfile
 
