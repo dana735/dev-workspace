@@ -464,23 +464,32 @@ git clone https://github.com/dana735/dev-workspace.git
 
 
 git init git시작
+
 git add .
+
 git commit -m “첫 저장”
+
 git remote add origin 저장소주소
+
 git branch -M main
+
 git push -u origin main
 
 이후변경시
 
 git add .파일추가
+
 git commit -m “설명” 저장
+
 git push github 업로드
 
 1. 보안 및 개인정보 보호
+2. 
 민감 정보(토큰, 비밀번호 등) 노출 없음 확인 완료
 
 3. 트러블슈팅
 - 문제: Docker 빌드 시 COPY 경로 에러 발생
+- 
 - 해결: 올바른 디렉토리 경로에서 빌드 명령어 실행
 
 14.절대경로 상대경로
@@ -488,6 +497,7 @@ git push github 업로드
 절대경로
 /c/Users/lightview117307/Documents
 cd..
+
 /c/Users/lightview117307
 
 
