@@ -240,11 +240,10 @@ cd my-web-site
 
 간단한 HTML 파일 만들기
 
-echo “
+echo “” > index.html
 
 # Hello, Docker Build!
 
-” > index.html
 
 ls
 
