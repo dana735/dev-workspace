@@ -22,7 +22,7 @@
 - [x]  Docker 기본 운영 명령어 수행 (`docker images`, `docker ps -a`, `docker logs`)
 - [x]  컨테이너 실행 실습 (`hello-world`, `ubuntu` 컨테이너 진입 등)
 - [x]  기존 Dockerfile 기반 커스텀 이미지 제작 및 빌드/실행 성공
-- [ ]  포트 매핑 (`p`) 및 브라우저 접속 성공 증거 첨부
+- [x]  포트 매핑 (`p`) 및 브라우저 접속 성공 증거 첨부
 - [ ]  바인드 마운트 및 Docker 볼륨 영속성 검증
 - [x]  Git 설정 및 GitHub 연동 완료
 - [x]  절대경로 상대경로
@@ -323,32 +323,36 @@ docker stop my-web-server
 
 docker rm my-web-server
 
-# 1. 파이썬이 설치된 가벼운 리눅스를 가져옵니다.
+#1. 파이썬이 설치된 가벼운 리눅스를 가져옵니다.
 
 FROM python:3.9-slim
 
-# 2. 가상 컴퓨터 안에 /my_folder라는 폴더를 만듭니다.
+#2. 가상 컴퓨터 안에 /my_folder라는 폴더를 만듭니다.
 
 RUN mkdir /my_folder
 
-# 3. 아까 우리가 만든 apple.txt를 가상 컴퓨터의 폴더로 복사합니다.
+#3. 아까 우리가 만든 apple.txt를 가상 컴퓨터의 폴더로 복사합니다.
 
 COPY apple.txt /my_folder/apple.txt
 
-# 4. 컴퓨터가 켜지면 apple.txt 내용을 화면에 보여주도록 설정합니다.
+#4. 컴퓨터가 켜지면 apple.txt 내용을 화면에 보여주도록 설정합니다.
 
 CMD [“cat”, “/my_folder/apple.txt”]
 
 😊실습
 
-Dockerfile 만들기
+# Dockerfile 만들기
+
 echo ‘FROM alpine’ > Dockerfile
+
 echo ‘CMD [“echo”, “Hello, Docker! I am learning!”]’ >> Dockerfile
 
 이미지 빌드업
+
 docker build -t my-first-image .
 
 컨테이너 실행
+
 docker run my-first-image
 
 1. Docker 기본 운영 명령어 및 컨테이너 실행 실습
@@ -360,7 +364,7 @@ docker ps -a
 docker run hello-world
 docker run -it ubuntu bash
 
-#실행
+# 실행
 docker run hello-world
 # -it 옵션: 컨테이너와 상호작용(interactive)하고 터미널(tty)을 연결하겠다는 뜻입니다.
 docker run -it ubuntu bash
