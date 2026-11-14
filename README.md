@@ -555,6 +555,13 @@ Open in Browser 버튼을 클릭하세요.
 <img width="858" height="166" alt="스크린샷 2026-11-14 164011" src="https://github.com/user-attachments/assets/61b2c80f-0b96-44df-9a4c-1790ce4d6e79" />
 
 
+실시간 동기화: docker run을 다시 실행하지 않고도, 호스트(Codespaces)의 파일만 수정했는데 컨테이너 속 웹사이트가 즉시 바뀌었습니다.
+
+개발 효율성: 소스 코드를 수정할 때마다 이미지를 새로 빌드하거나 컨테이너를 껐다 켤 필요가 없다는 것을 직접 확인
+
+바인드 마운트의 장점: 도커 컨테이너를 중지하거나 새로 만들지 않아도, 내 컴퓨터(Codespaces)의 html/index.html 파일만 수정하면 웹사이트 내용이 즉시 바뀐다.
+
+
 image
 
 15.명령어
