@@ -151,19 +151,19 @@ rm test.txt # test.txt 삭제
 
 ## 5. 권한 실습 및 증거 기록
 
-# 실습 파일 및 디렉토리 생성
+#실습 파일 및 디렉토리 생성
 
 touch apple.txt
 
-# 변경 전 권한 확인
+#변경 전 권한 확인
 
 ls -l apple.txt 644
 
-# 권한 변경
+#권한 변경
 
 chmod 600 apple.txt
 
-# 변경 후 권한 확인 결과
+#변경 후 권한 확인 결과
 
 ls -ld apple.txt
 
