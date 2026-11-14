@@ -492,13 +492,61 @@ git push github 업로드
 - 
 - 해결: 올바른 디렉토리 경로에서 빌드 명령어 실행
 
-14.절대경로 상대경로
+## 절대경로 상대경로
 
 절대경로
 /c/Users/lightview117307/Documents
 cd..
 
 /c/Users/lightview117307
+
+## 바인드 마운트 및 Docker 볼륨 영속성 검증 터미널 기본 조작 (위치 확인, 파일/디렉토리 생성·이동·삭제 등)
+
+**도커가 없어서 깃허브 코드스페이스 이용
+
+# 바인드 마운트 검증 및 증거
+
+테스트용 HTML 파일 만들기
+ (현재 폴더에 index.html 파일을 만듭니다.)
+
+# 현재 경로에 html 폴더를 만들고 컨테이너와 연결
+
+mkdir html
+
+echo "<h1>Hello Bind Mount</h1>" > html/index.html
+
+ 
+수정 테스트: 내 컴퓨터의 html/index.html 내용을 수정하고 브라우저(localhost:8081)를 새로고침했을 때 내용이 바로 바뀌는지 확인합니다.
+증거: 터미널에서 ls html 결과와 브라우저의 수정된 화면을 캡처하세요.
+
+
+2. Nginx 컨테이너 실행 (바인드 마운트 적용)
+이제 이 파일을 도커 컨테이너와 연결해서 실행합니다. 아래 명령어를 통째로 복사하세요.
+
+docker run -d \
+
+  --name my-web \
+  
+  -p 8080:80 \
+
+    -v $(pwd)/index.html:/usr/share/nginx/html/index.html \
+  nginx
+
+
+-d: 백그라운드 실행
+
+-p 8080:80: 외부 8080 포트를 컨테이너 80 포트로 연결
+
+-v $(pwd)/index.html:...: 이게 핵심! 현재 폴더의 파일을 컨테이너 내부 파일과 연결(마운트)합니다.
+
+결과 확인하기
+
+명령어를 입력하면 오른쪽 하단에 **"A service is running on port 8080"**이라는 알림창이 뜰 거예요.
+
+Open in Browser 버튼을 클릭하세요.
+
+브라우저 새 탭에 **"Hello, Docker Bind Mount!"**
+
 
 
 
