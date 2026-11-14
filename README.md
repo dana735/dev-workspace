@@ -545,6 +545,8 @@ Open in Browser 버튼을 클릭하세요.
 
 
 
+<img width="571" height="224" alt="스크린샷 2026-11-14 151610" src="https://github.com/user-attachments/assets/267d1819-2286-4db8-96d2-b48e83757336" />
+
 
 image
 
