@@ -548,6 +548,13 @@ Open in Browser 버튼을 클릭하세요.
 <img width="571" height="224" alt="스크린샷 2026-11-14 151610" src="https://github.com/user-attachments/assets/267d1819-2286-4db8-96d2-b48e83757336" />
 
 
+<img width="578" height="115" alt="스크린샷 2026-11-14 163917" src="https://github.com/user-attachments/assets/bade37ee-91bb-4551-ae11-c3c90b1a409e" />
+
+
+
+<img width="858" height="166" alt="스크린샷 2026-11-14 164011" src="https://github.com/user-attachments/assets/61b2c80f-0b96-44df-9a4c-1790ce4d6e79" />
+
+
 image
 
 15.명령어
