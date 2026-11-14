@@ -512,7 +512,8 @@ cd..
 
 mkdir html
 
-echo "<h1>Hello Bind Mount</h1>" > html/index.html
+echo "<h1>Hello, Docker Bind Mount!</h1>" > index.html
+
 
  
 수정 테스트: 내 컴퓨터의 html/index.html 내용을 수정하고 브라우저(localhost:8081)를 새로고침했을 때 내용이 바로 바뀌는지 확인합니다.
@@ -523,14 +524,10 @@ echo "<h1>Hello Bind Mount</h1>" > html/index.html
 이제 이 파일을 도커 컨테이너와 연결해서 실행합니다. 아래 명령어를 통째로 복사하세요.
 
 docker run -d \
-
   --name my-web \
-  
   -p 8080:80 \
-
-    -v $(pwd)/index.html:/usr/share/nginx/html/index.html \
+  -v $(pwd)/index.html:/usr/share/nginx/html/index.html \
   nginx
-
 
 -d: 백그라운드 실행
 
