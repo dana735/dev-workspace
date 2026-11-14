@@ -29,7 +29,7 @@
 
 ---
 
-## 4. 터미널 조작 로그 기록
+## 4. 터미널 조작 기록
 
 #1. 현재 위치 확인
 
@@ -74,22 +74,22 @@ PS C:-workspace> rm scripts
 
 PS C:-workspace> dir
 
-# (scripts 폴더가 목록에서 사라진 것을 확인)
+#(scripts 폴더가 목록에서 사라진 것을 확인)
 
-# 파일있었으면
+#파일있었으면
 
 PS C:-workspace> rm test.txt
 
 PS C:-workspace> dir
 (파일이 삭제되어 목록에 아무것도 나타나지 않음)
 
-# 명령어 cd.. 상위 폴더 이동후 위 작업 실시
+#명령어 cd.. 상위 폴더 이동후 위 작업 실시
 
 PS C:-workspace> cd ..
 
 PS C:-workspace>
 
-# 5. 숨김 파일 포함 목록 확인 (PowerShell에서는 ls -la 대신 ls -Force 사용 권장)
+#6. 숨김 파일 포함 목록 확인 (PowerShell에서는 ls -la 대신 ls -Force 사용 권장)
 
 PS C:-workspace> ls -Force
 
@@ -97,7 +97,7 @@ PS C:-workspace> ls -Force
 # (현재는 비어있으므로 아무것도 나오지 않거나 . 과 .. 만 보입니다)
 ```
 
-# 6. 빈 파일 생성 톅스트 쓰기
+#7. 빈 파일 생성 톅스트 쓰기
 
 리눅스로 옮김
 
@@ -118,7 +118,7 @@ cat memo.txt
 
 두줄이 다 나오는지 확인
 
-# 7 .복사 및 폴더 관리 ***중요!
+#8 .복사 및 폴더 관리 ***중요!
 
 mkdir secret # 1. secret 폴더 만들기
 
@@ -141,7 +141,7 @@ mkdir secret # 폴더 다시 만들고
 
 cp backup.txt secret/my_note.txt # 백업본을 다시 폴더 안으로 복사해서 복구!
 
-# 8.이동 및 삭제
+#9.이동 및 삭제
 
 mv backup.txt secret/ # backup.txt를 secret 폴더로 이동
 
@@ -181,7 +181,7 @@ ls -l apple.txt
 
 ## 6. Docker 설치 및 기본 점검 Dockerfile
 
-# docker –version
+# 1 docker –version
 
 버전 표시
 
@@ -192,7 +192,7 @@ docker run hello-world
 
 “HELLO from Docker!”
 
-# 이미지 컨테이너 목록 확인및 정리 흔적이 있는가
+# 2 이미지 컨테이너 목록 확인및 정리 흔적이 있는가
 
 docker ps -a all
 
@@ -200,13 +200,13 @@ NAME hello-world 컨테이너 STATUS Exited 실행흔적 뜻 잘실행
 
 image
 
-# 이미지 목록 확인
+# 3 이미지 목록 확인
 
 docker images
 
 레지스토리에 hello-world 보임
 
-# 컨테이너 삭제
+# 4 컨테이너 삭제
 
 docker rm [컨테이너_ID] 도커는 아이디 앞 세자리만 해도 됨
 
@@ -220,7 +220,7 @@ docker rmi hello-world my-web-server
 
 ㅇocker system prune 한번에 지우기
 
-확인
+# 5 확인
 
 docker ps -a
 
@@ -228,9 +228,9 @@ docker images
 
 image
 
-## Dockfile
+## 6 Dockfile
 
-# 실습용 파일
+# 1 실습용 파일
 
 mkdir my-web-site
 
@@ -238,7 +238,7 @@ cd my-web-site
 
 현재 위치 ~ my-web-site 폴더에 잘 들어옴
 
-간단한 HTML 파일 만들기
+# 2 간단한 HTML 파일 만들기
 
 echo “” > index.html
 
@@ -255,17 +255,17 @@ cat Dockerfile
 
 도커 파일 보여줘
 
-# 도커파일 작성하기
+# 3 도커파일 작성하기
 
 nano Dockerfile
 
 nano 편집기 빠져 나올때 Ctrl= X
 
-# 1. 베이스 이미지 설정 (가벼운 nginx 서버 사용)
+#1. 베이스 이미지 설정 (가벼운 nginx 서버 사용)
 
 FROM nginx:alpine
 
-# 2. 내가 만든 index.html 파일을 컨테이너 안의 웹 서버 경로로 복사
+#2. 내가 만든 index.html 파일을 컨테이너 안의 웹 서버 경로로 복사
 
 COPY index.html /usr/share/nginx/html/index.html
 
@@ -277,7 +277,7 @@ docker build -t my-custom-web:1.0 .
 
 - . 꼭!! 현재 폴더 도크 파일 사용하겠다!
 
-# 4.빌드된 이미지 확인
+#4.빌드된 이미지 확인
 
 docker images
 
@@ -299,7 +299,7 @@ docker run -d -p 8080:80 –name my-web-container my-custom-web:1.0
 - 포트; 데이터 문 출입구 건물안의 방
 - ip: 주소
 
-컨테이너 실행확인
+#1 컨테이너 실행확인
 
 docker ps
 
@@ -313,12 +313,12 @@ Hello,Docker Build!
 
 image
 
-- 마무리 정리 컨테이너 끌때
+#2- 마무리 정리 컨테이너 끌때
 - 멈추기
 
 docker stop my-web-server
 
-- 삭제 이미지는 남음
+#3- 삭제 이미지는 남음
 
 docker rm my-web-server
 
@@ -365,10 +365,15 @@ docker run -it ubuntu bash
 
 # 실행
 docker run hello-world
-# -it 옵션: 컨테이너와 상호작용(interactive)하고 터미널(tty)을 연결하겠다는 뜻입니다.
+
+#-it 옵션: 컨테이너와 상호작용(interactive)하고 터미널(tty)을 연결하겠다는 뜻입니다.
+
 docker run -it ubuntu bash
-# -d: 백그라운드 실행 (Detached mode)
+
+#-d: 백그라운드 실행 (Detached mode)
+
 # -p 8080:80: 내 컴퓨터의 8080 포트를 컨테이너의 80 포트로 연결
+
 docker run -d -p 8080:80 –name my-server nginx
 
 docker ps 확인
@@ -517,9 +522,13 @@ html/index.html (현재 폴더 안에 있는 html 폴더의 index.html)
 
 5. 한눈에 비교하기
 구분	절대 경로 (Absolute)	상대 경로 (Relative)
+
 시작점	최상위 루트 (/)	현재 위치 (./)
+
 장점	어디서 실행해도 정확하고 명확함	경로가 짧고 폴더 이동 시 유연함
+
 단점	경로가 길어서 복잡함	현재 위치가 바뀌면 경로가 깨짐
+
 비유	"서울특별시 강남구 ... 101호"	"여기서 오른쪽으로 가서 첫 번째 집"
 
 
@@ -529,6 +538,7 @@ $(pwd)의 역할: 이 명령어는 **"현재 내 위치의 절대 경로"**를 �
 그래서 $(pwd)/html (즉, /workspaces/repo/html)처럼 확실한 주소를 주는 것입니다.
 
 🌟 꿀팁
+
 터미널에서 pwd라고 입력해 보세요. 지금 당신이 서 있는 곳의 절대 경로가 나타납니다!
 
 
