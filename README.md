@@ -40,7 +40,7 @@ C:-workspace
 
 powershell pwd
 
-# 2. 폴더 생성 (practice)
+#2. 폴더 생성 (practice)
 
 PS C:-workspace> mkdir scrips
 
@@ -51,12 +51,12 @@ PS C:-workspace> mkdir scrips
 Mode LastWriteTime Length Name
 —- ————- —— —-
 
-# 3. 목록 확인 (숨김 파일 포함)
+#3. 목록 확인 (숨김 파일 포함)
 
 PS C:-workspace> dir /a
 # (여기에 현재 폴더의 모든 파일과 폴더 목록이 출력됩니다)
 
-# 4. scripts 폴더 생성 및 이동
+#4. scripts 폴더 생성 및 이동
 
 PS C:-workspace> mkdir scripts
 
@@ -68,7 +68,7 @@ C:-workspace>cd scripts
 
 C:-workspace>
 
-# 5.삭제
+#5.삭제
 
 PS C:-workspace> rm scripts
 
