@@ -54,7 +54,7 @@ Mode LastWriteTime Length Name
 #3. 목록 확인 (숨김 파일 포함)
 
 PS C:-workspace> dir /a
-# (여기에 현재 폴더의 모든 파일과 폴더 목록이 출력됩니다)
+#(여기에 현재 폴더의 모든 파일과 폴더 목록이 출력됩니다)
 
 #4. scripts 폴더 생성 및 이동
 
