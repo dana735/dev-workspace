@@ -401,7 +401,7 @@ mv memo.txt secret/❤
     docker build -t my-custom-nginx .
     docker run -d -p 80:80 –name custom-web-server my-custom-nginx
     
-1. 포트 매핑 및 접속 증거😊
+# 1. 포트 매핑 및 접속 증거😊
 
 # d: 백그라운드 실행 (Detached mode)
 
@@ -410,6 +410,7 @@ mv memo.txt secret/❤
 docker run -d -p 8080:80 –name my-server nginx
 
 - p 80:80 포트 매핑 설정 및 접속 확인
+- 
 curl http://localhost:80
 
 스크린샷(1) png1
@@ -418,12 +419,13 @@ image
 
 image
 
-1. 바인드 마운트 반영 + Docker 볼륨 영속성 검증
-2. 
-
+# 2. 바인드 마운트 반영 + Docker 볼륨 영속성 검증
+ 
 docker volume create my_data_vol
 
 docker run -d –name vol-test -v my_data_vol:/data nginx
+
+아래쪽에 정리
 
 # Git 설정 및 GitHub 연동 증거
 
@@ -449,8 +451,11 @@ git status
 현재 변경된 파일이 있는지, 로컬 브랜치가 원격 브랜치(origin/main 등)와 동기화되어 있는지 알려줍니다.
 
 not a git repository” 에러가 뜨나요?
+
 해당 폴더에서 git init을 하지 않았거나, Git 설정이 시작되지 않은 상태입니다.
+
 git remote -v를 쳤는데 아무것도 안 나오나요?
+
 git remote add origin [저장소주소] 명령어로 GitHub 저장소를 연결해 주어야 합니다.
 
 git config –global user.name “dana735”
@@ -499,7 +504,7 @@ cd..
 
 /c/Users/lightview117307
 
-## 바인드 마운트 및 Docker 볼륨 영속성 검증 터미널 기본 조작 (위치 확인, 파일/디렉토리 생성·이동·삭제 등)
+## 2 바인드 마운트 및 Docker 볼륨 영속성 검증 터미널 기본 조작 (위치 확인, 파일/디렉토리 생성·이동·삭제 등)
 
 **도커가 없어서 깃허브 코드스페이스 이용
 
@@ -515,13 +520,31 @@ mkdir html
 echo "<h1>Hello, Docker Bind Mount!</h1>" > index.html
 
 
- 
-수정 테스트: 내 컴퓨터의 html/index.html 내용을 수정하고 브라우저(localhost:8081)를 새로고침했을 때 내용이 바로 바뀌는지 확인합니다.
-증거: 터미널에서 ls html 결과와 브라우저의 수정된 화면을 캡처하세요.
+# 절대 경로를 사용하여 연결 (pwd는 현재 경로)
+
+docker run -d -p 8081:80 -v $(pwd)/html:/usr/share/nginx/html --name bind-test nginx
+
+수정 테스트: 내 컴퓨터의 html/index.html 내용을 수정하고 브라우저(localhost:8081)를 새로고침했을 때 내용이 바로 바뀌는지 확인
+
+# Docker 볼륨 (Volume) 영속성 검증
+컨테이너를 삭제해도 데이터가 남아있는지 확인하는 가장 중요한 단계
 
 
-2. Nginx 컨테이너 실행 (바인드 마운트 적용)
-이제 이 파일을 도커 컨테이너와 연결해서 실행합니다. 아래 명령어를 통째로 복사하세요.
+# 1. 볼륨 생성
+docker volume create my-data
+
+# 2. 볼륨을 마운트하여 컨테이너 실행
+docker run -it --name test-container -v my-data:/app ubuntu bash
+
+# 3. 컨테이너 내부에서 파일 생성 후 종료
+# (컨테이너 안에서 실행)
+cd /app
+echo "persistence test" > evidence.txt
+exit
+
+
+
+*한번 더 연습
 
 docker run -d \
   --name my-web \
@@ -537,7 +560,7 @@ docker run -d \
 
 결과 확인하기
 
-명령어를 입력하면 오른쪽 하단에 **"A service is running on port 8080"**이라는 알림창이 뜰 거예요.
+명령어를 입력하면 오른쪽 하단에 **"A service is running on port 8080"**이라는 알림창
 
 Open in Browser 버튼을 클릭하세요.
 
