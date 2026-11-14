@@ -541,6 +541,8 @@ docker run -d \
 
 Open in Browser 버튼을 클릭하세요.
 
+8080 포트 옆에 지구본 모양 아이콘
+
 브라우저 새 탭에 **"Hello, Docker Bind Mount!"**
 
 
