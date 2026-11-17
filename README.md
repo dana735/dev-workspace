@@ -280,19 +280,6 @@ cat Dockerfile
 3. **저장 및 종료 단축키:** `Ctrl + O` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
 
 
-nano Dockerfile
-
-nano 편집기 빠져 나올때 Ctrl= X
-
-#1. 베이스 이미지 설정 (가벼운 nginx 서버 사용)
-
-FROM nginx:alpine
-
-#2. 내가 만든 index.html 파일을 컨테이너 안의 웹 서버 경로로 복사
-
-COPY index.html /usr/share/nginx/html/index.html
-
-저장 Ctrl +0-> Ctrl+ x
 
 # 3.이미지 빌드하기 # 가장중요!!!
 
