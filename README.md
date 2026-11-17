@@ -335,6 +335,8 @@ Hello,Docker Build!
 
 image
 
+1️⃣ 첫 번째 구역: 실행 중이던 컨테이너 끄고 지우기 (뒷정리)
+
 #2- 마무리 정리 컨테이너 끌때
 - 멈추기
 
@@ -343,6 +345,10 @@ docker stop my-web-server
 #3- 삭제 이미지는 남음
 
 docker rm my-web-server
+
+컨테이너(붕어빵)만 지웠을 뿐, 원본 설계도인 이미지(붕어빵 틀)는 그대로 남아 있어서 언제든 다시 만들 수 있다는 뜻
+
+2️⃣ 두 번째 구역: 새로운 Dockerfile 설계도 내용 (#1 ~ #4)
 
 #1. 파이썬이 설치된 가벼운 리눅스를 가져옵니다.
 
@@ -363,6 +369,9 @@ CMD [“cat”, “/my_folder/apple.txt”]
 😊실습
 
 # Dockerfile 만들기
+
+3️⃣ 세 번째 구역: 편집기(nano) 안 쓰고 한 줄씩 Dockerfile 만들기 (😊실습)맨 아래 😊실습 부분은 아까처럼 nano 메모장을 열지 않고, 터미널에서 바로 echo 명령어를 이용해 Dockerfile을 뚝딱 만들어내는 방법입니다.    (컨테이너가 켜지면 "Hello, Docker! I am learning!"이라고 인사말을 출력하게 만드는 초간단 설계도입니다.)   
+
 
 echo ‘FROM alpine’ > Dockerfile
 
