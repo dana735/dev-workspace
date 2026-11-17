@@ -269,7 +269,16 @@ cat Dockerfile
 
 도커 파일 보여줘
 
-## 3 도커파일 작성하기
+
+### 3. 도커파일(Dockerfile) 작성하기
+나만의 웹페이지(`index.html`)를 담은 맞춤형 웹 서버 설계도 만들기
+
+1. **편집기 열기:** `nano Dockerfile`
+2. **설계도 내용 작성 (편집기 내부에 입력):**
+   * `FROM nginx:alpine` : 가벼운 버전의 nginx 웹 서버를 기본 틀로 사용
+   * `COPY index.html /usr/share/nginx/html/index.html` : 내 `index.html` 파일을 컨테이너 내부 웹 서버 경로로 복사
+3. **저장 및 종료 단축키:** `Ctrl + O` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
+
 
 nano Dockerfile
 
