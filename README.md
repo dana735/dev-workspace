@@ -8,6 +8,7 @@
 
 ## 2. 실행 환경
 
+
 - **OS / 셸**: Linux (GitHub Codespaces) / Bash
 - **Docker 버전**: (`docker --version` 결과 기입)
 - **Git 버전**: (`git --version` 결과 기입)
@@ -279,13 +280,14 @@ cat Dockerfile
    * `COPY index.html /usr/share/nginx/html/index.html` : 내 `index.html` 파일을 컨테이너 내부 웹 서버 경로로 복사
 3. **저장 및 종료 단축키:** `Ctrl + O` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
 
+🛠️ [3. 이미지 빌드하기] & [웹서버 실행] 완벽 정리본
 
-
-# 3.이미지 빌드하기 # 가장중요!!!
 
 docker build -t my-custom-web:1.0 .
 
 - . 꼭!! 현재 폴더 도크 파일 사용하겠다!
+
+- docker build: 아까 작성한 Dockerfile(설계도)을 바탕으로 이미지를 조립(빌드)하겠다는 뜻입니다.-t my-custom-web:1.0: 내가 만든 이미지에 이름(my-custom-web)과 버전(1.0)표시(Tag)를 붙여주는 옵션입니다.   . (마지막 점): "꼭 현재 폴더(.)"에 있는 Dockerfile을 사용해서 빌드하라는 뜻으로, 이 점을 빼먹으면 에러가 납니다!   
 
 #4.빌드된 이미지 확인
 
@@ -303,11 +305,21 @@ my-custom-web:1.0 이미지 이름 보이면 성공 web 뒤:1.0이 방금 내가
 
 docker run -d -p 8080:80 –name my-web-container my-custom-web:1.0
 
-- d컨테이너 백그라운드 진행
+docker run: 이미지 기반으로 컨테이너(실행 중인 프로그램)를 띄워라!
+
+-  -d컨테이너 백그라운드 진행 Detached 모드 (백그라운드에서 조용히 실행되도록 함. 터미널을 계속 차지하지 않고 뒤에서 돌아가게 됨)
+- 
 - p 8080;80
 8080번 포트로 들어오는 신호를 컨테이너안 80번{웹기본포트} 포트로 전달
 - 포트; 데이터 문 출입구 건물안의 방
+- 
 - ip: 주소
+- -  (크롬 주소창에 localhost:8080을 치면 내가 만든 웹페이지가 뜨게 만드는 핵심 연결고리입니다!)
+  -  
+ --name my-web-container: 실행될 컨테이너의 이름을 my-web-container라고 지어준다.
+
+ - my-custom-web:1.0: 어떤 이미지를 바탕으로 실행할 것인가? (아까 우리가 위에서 빌드한 그 이미지 이름!)   
+- 
 
 #1 컨테이너 실행확인
 
