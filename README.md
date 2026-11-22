@@ -302,14 +302,7 @@ cd my-web-site
 
 ## 2 간단한 HTML 파일 만들기
 
-echo “” > index.html
-
-# Hello, Docker Build!
-
-
-ls
-
-cat index.html
+echo “<h1>Hello,Docker Build!</h1>”> index.html
 
 파일 내용 화면에 보여달라
 
@@ -317,15 +310,19 @@ cat Dockerfile
 
 도커 파일 보여줘
 
+<img width="928" height="85" alt="image" src="https://github.com/user-attachments/assets/c5132b86-4498-4674-8a4b-3cfa1693fa23" />
+
 
 ### 3. 도커파일(Dockerfile) 작성하기
+
 나만의 웹페이지(`index.html`)를 담은 맞춤형 웹 서버 설계도 만들기
 
-1. **편집기 열기:** `nano Dockerfile`
-2. **설계도 내용 작성 (편집기 내부에 입력):**
+1. **편집기 열기:** `nano Dockerfile`메모장 
+2. 
+3. **설계도 내용 작성 (편집기 내부에 입력):**
    * `FROM nginx:alpine` : 가벼운 버전의 nginx 웹 서버를 기본 틀로 사용
    * `COPY index.html /usr/share/nginx/html/index.html` : 내 `index.html` 파일을 컨테이너 내부 웹 서버 경로로 복사
-3. **저장 및 종료 단축키:** `Ctrl + O` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
+4. **저장 및 종료 단축키:** `Ctrl + O` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
 
 🛠️ [3. 이미지 빌드하기] & [웹서버 실행] 완벽 정리본
 
