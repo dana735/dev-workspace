@@ -325,6 +325,12 @@ cat Dockerfile
    * 
 3. **저장 및 종료 단축키:** `Ctrl + s` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
 
+저장시 다른 이름저장  모든파일 변경 "Docker"
+저장 주소가 바탕화면이라  
+1.cd ~ 2 cd Desktop 3.Dockerfile 내용확인 4.도커 이미지 빌드
+
+
+
 ###🛠️ [3. 이미지 빌드하기] & [웹서버 실행] 완벽 정리본
 
 docker build -t my-custom-web:1.0 .
