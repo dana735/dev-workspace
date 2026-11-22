@@ -481,9 +481,14 @@ index.html 내용 바꾸고 확인하기
 
 type .\index.html
 
+<img width="316" height="32" alt="image" src="https://github.com/user-attachments/assets/ab4e9e7a-a185-4ac6-b08b-3656c4b36159" />
+
 <h1>Bind Mount Works!</h1>가 화면에 찍히면 파일이 정상 생성된 것입니다.
 
 그다음 브라우저에서 http://localhost:8080을 새로고침(F5)해 보세요.
+
+<img width="379" height="155" alt="image" src="https://github.com/user-attachments/assets/e5aea479-5638-4bf9-ac38-ce88fc4e5076" />
+
 
 만약 my-bind-web 컨테이너가 아직 안 떠 있는 상태라면, 먼저 docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine으로 띄운 뒤에 확인하시면 됩니다.
 
