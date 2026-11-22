@@ -356,6 +356,13 @@ my-custom-web:1.0 이미지 이름 보이면 성공 web 뒤:1.0이 방금 내가
 
 # 웹서버 실행
 
+# 1. 포트 매핑 및 접속 증거😊
+
+# d: 백그라운드 실행 (Detached mode)
+
+# p 8080:80: 내 컴퓨터의 8080 포트를 컨테이너의 80 포트로 연결
+
+
 docker run -d -p 8080:80 –name my-web-container my-custom-web:1.0
 
 docker run: 이미지 기반으로 컨테이너(실행 중인 프로그램)를 띄워라!
@@ -451,18 +458,6 @@ docker ps -a
 docker run hello-world
 docker run -it ubuntu bash
 
-# 실행
-docker run hello-world
-
-#-it 옵션: 컨테이너와 상호작용(interactive)하고 터미널(tty)을 연결하겠다는 뜻입니다.
-
-docker run -it ubuntu bash
-
-#-d: 백그라운드 실행 (Detached mode)
-
-# -p 8080:80: 내 컴퓨터의 8080 포트를 컨테이너의 80 포트로 연결
-
-docker run -d -p 8080:80 –name my-server nginx
 
 docker ps 확인
 docker stop my-server
@@ -494,23 +489,7 @@ mv memo.txt secret/❤
     docker build -t my-custom-nginx .
     docker run -d -p 80:80 –name custom-web-server my-custom-nginx
     
-# 1. 포트 매핑 및 접속 증거😊
 
-# d: 백그라운드 실행 (Detached mode)
-
-# p 8080:80: 내 컴퓨터의 8080 포트를 컨테이너의 80 포트로 연결
-
-docker run -d -p 8080:80 –name my-server nginx
-
-- p 80:80 포트 매핑 설정 및 접속 확인
-- 
-curl http://localhost:80
-
-스크린샷(1) png1
-
-image
-
-image
 
 # 2. 바인드 마운트 반영 + Docker 볼륨 영속성 검증
  
