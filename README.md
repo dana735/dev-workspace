@@ -411,21 +411,34 @@ Hello,Docker Build!
 포트 매핑은 컨테이너를 백업해 주는 기능이 아니라 내 컴퓨터(8080 포트)와 컨테이너 안 웹 서버(80 포트)를 연결해 브라우저로 접속하게 해 주는 통로이고, 지금 띄운 컨테이너는 바인드 마운트나 볼륨 없이 index.html을 이미지 안에 복사(COPY)해 만든 상태라 컨테이너를 지우면 컨테이너 자체는 없어지지만 my-custom-web:1.0 이미지는 그대로 남아서 나중에 언제든 같은 웹 서버를 다시 띄울 수 있다
 
 
-1. 바인드 마운트 컨테이너 실행
+#  바인드 마운트 컨테이너 실행
 
 바인드 마운트는 내 컴퓨터 폴더(Desktop)와 컨테이너 폴더를 실시간으로 연결해 컨테이너를 지워도 바탕화면 파일이 남고 수정 내용이 바로 반영되는지 보는 방식입니다 
- 
+
+### 현재 위치 확인하기
+
+PowerShell 프롬프트가 C:\Users\lightview117307\Desktop>처럼 Desktop 폴더로 되어 있는지 확인해 주세요. (다른 경로라면 cd ~\Desktop을 먼저 입력
+
+### 바인드 마운트로 웹 컨테이너 띄우기
+
 docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine
 
 <img width="941" height="286" alt="image" src="https://github.com/user-attachments/assets/103da4a8-aaee-424b-9d66-79969a093bb9" />
 
-컨테이너 ID가 나왔다면
+컨테이너 ID가 한 줄 나오면 성공!
+
+### 브라우저에서 기존 화면 확인하기
+
+크롬이나 엣지 주소창에 http://localhost:8080(또는 [http://127.0.0.1:8080](http://127.0.0.1:8080))을 입력하고 Enter.
+
 
 2. index.html 내용 바꾸고 확인하기
 
 "<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
 
 그다음 브라우저에서 http://localhost:8080을 새로고침(F5)했을 때 Bind Mount Works!가 뜨면 바인드 마운트 반영 검증 완료입니다!
+
+
 
 
 1️⃣ 첫 번째 구역: 실행 중이던 컨테이너 끄고 지우기 (뒷정리)
