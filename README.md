@@ -521,9 +521,12 @@ docker exec my-vol-web sh -c 'echo "<h1>Volume Data Survived!</h1>" > /usr/share
 docker rm -f my-vol-web
 docker run -d -p 8080:80 --name my-vol-web-2 -v my-web-vol:/usr/share/nginx/html nginx:alpine
 
+<img width="557" height="108" alt="image" src="https://github.com/user-attachments/assets/2417b0e7-8e85-48fb-9bf7-4dbad43a30eb" />
+
 http://localhost:8080)를 새로고침(F5)했을 때 아까 넣었던 Volume Data Survived!가 그대로 보이면 볼륨 영속성 검증 성공
 
 
+ㅇ<img width="299" height="122" alt="image" src="https://github.com/user-attachments/assets/f59d9f9a-b3fa-445b-bc6b-5c8fb316587e" />
 
 
 
