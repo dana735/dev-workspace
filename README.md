@@ -189,9 +189,15 @@ mv secret-backup secret/ # secret-backup를 secret 폴더로 이동
 
 touch apple.txt
 
+#권한 변경 
+
+chmod 644 apple.txt
+
 #변경 전 권한 확인
 
 ls -l apple.txt 644
+
+<img width="695" height="124" alt="image" src="https://github.com/user-attachments/assets/67b97d9d-ae7f-429b-aeb4-ab7d3e387f03" />
 
 #권한 변경
 
@@ -199,17 +205,22 @@ chmod 600 apple.txt
 
 #변경 후 권한 확인 결과
 
-ls -ld apple.txt
+ls -l apple.txt
+
 
 -l (long 길게 파일 세부 상세)
 
 ls -d (directory 내용말고 폴더 자체 정보만 딱)
 
 - rw——- 600
+- 
+<img width="701" height="122" alt="image" src="https://github.com/user-attachments/assets/0877b8e2-3685-4ec0-89ca-5e42361afacc" />
 
 chmod 755 apple.txt
 
 ls -l apple.txt
+
+<img width="717" height="116" alt="image" src="https://github.com/user-attachments/assets/7bfaa798-1add-4e1a-8c72-c72a59dbd759" />
 
 - rwxr-xr-x
 
