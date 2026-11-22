@@ -364,9 +364,9 @@ my-custom-web:1.0 이미지 이름 보이면 성공 web 뒤:1.0이 방금 내가
 
 # 1. 포트 매핑 및 접속 증거😊
 
-# d: 백그라운드 실행 (Detached mode)
+포트 매핑(8080:80): 내 컴퓨터 8080번 문과 컨테이너 안 80번 문을 이어 준 것 → 그래서 브라우저로 들어갈 수 있었고, 그 경로로 접속이 들어온 것입니다.
 
-# p 8080:80: 내 컴퓨터의 8080 포트를 컨테이너의 80 포트로 연결
+접속 확인: Hello, Docker Build! 화면이 떴다는 것 자체가 포트 매핑과 웹 서버 접속이 정상 동작했다는 뜻입니다.
 
 
 docker run -d -p 8080:80 –name my-web-container my-custom-web:1.0
@@ -402,9 +402,18 @@ my-web-sever 또는 my-web container 보이면 성공
 
 Hello,Docker Build!
 
+
+
 <img width="541" height="137" alt="image" src="https://github.com/user-attachments/assets/8db87300-9482-41fe-974c-4054c5b94a7e" />
 
+
+
+포트 매핑은 컨테이너를 백업해 주는 기능이 아니라 내 컴퓨터(8080 포트)와 컨테이너 안 웹 서버(80 포트)를 연결해 브라우저로 접속하게 해 주는 통로이고, 지금 띄운 컨테이너는 바인드 마운트나 볼륨 없이 index.html을 이미지 안에 복사(COPY)해 만든 상태라 컨테이너를 지우면 컨테이너 자체는 없어지지만 my-custom-web:1.0 이미지는 그대로 남아서 나중에 언제든 같은 웹 서버를 다시 띄울 수 있다
+
+
 1. 바인드 마운트 컨테이너 실행
+
+바인드 마운트는 내 컴퓨터 폴더(Desktop)와 컨테이너 폴더를 실시간으로 연결해 컨테이너를 지워도 바탕화면 파일이 남고 수정 내용이 바로 반영되는지 보는 방식입니다 
  
 docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine
 
