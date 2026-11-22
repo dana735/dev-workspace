@@ -398,6 +398,20 @@ Hello,Docker Build!
 
 <img width="541" height="137" alt="image" src="https://github.com/user-attachments/assets/8db87300-9482-41fe-974c-4054c5b94a7e" />
 
+1. 바인드 마운트 컨테이너 실행
+ 
+docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine
+
+<img width="941" height="286" alt="image" src="https://github.com/user-attachments/assets/103da4a8-aaee-424b-9d66-79969a093bb9" />
+
+컨테이너 ID가 나왔다면
+
+2. index.html 내용 바꾸고 확인하기
+
+"<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
+
+그다음 브라우저에서 http://localhost:8080을 새로고침(F5)했을 때 Bind Mount Works!가 뜨면 바인드 마운트 반영 검증 완료입니다!
+
 
 1️⃣ 첫 번째 구역: 실행 중이던 컨테이너 끄고 지우기 (뒷정리)
 
