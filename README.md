@@ -162,11 +162,13 @@ cp -r secret secret_backup # 4. 폴더 전체를 복사 (-r 필수!)
 cp -r 폴더 파일 모두 복사
 
 백업 파일 이유
-rm -rf secret # 아차! 폴더를 실수로 지웠다!
+rm -r secret # 아차! 폴더를 실수로 지웠다!
 
-ls secret # 파일이 없어서 에러 발생
+ls secret # 폴더그 없어서 에러 발생
 
-cat backup.txt # 휴, 밖에 복사해둔 파일은 무사하네!
+<img width="1021" height="371" alt="image" src="https://github.com/user-attachments/assets/804b3f30-6197-4816-accb-65249d2d72ca" />
+
+ls backup.txt # 휴, 밖에 복사해둔 파일은 무사하네!
 
 mkdir secret # 폴더 다시 만들고
 
@@ -174,11 +176,12 @@ cp backup.txt secret/my_note.txt # 백업본을 다시 폴더 안으로 복사�
 
 #9.이동 및 삭제
 
-mv backup.txt secret/ # backup.txt를 secret 폴더로 이동
+mv secret-backup secret/ # secret-backup를 secret 폴더로 이동
 
-rm test.txt # test.txt 삭제
+<img width="856" height="231" alt="image" src="https://github.com/user-attachments/assets/9afb549f-0601-4128-9094-5950d09b25e8" />
 
-- rm final.txt # final.txt가 있다면 삭제
+
+
 
 ## 5. 권한 실습 및 증거 기록
 
