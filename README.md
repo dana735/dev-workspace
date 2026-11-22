@@ -1,6 +1,7 @@
 r
 # 💻 내 컴퓨터에 개발자용 ‘작업실’ 꾸미기
 
+
 ## 1. 프로젝트 개요 (미션 목표 요약)
 
 - **목적**: GitHub Codespaces 및 Linux 환경을 기반으로 개발에 필요한 기본 터미널 조작, 파일 권한 관리, Docker 컨테이너 빌드·운영, 그리고 Git/GitHub 연동을 수행하고 이를 기술 문서로 기록한다.
@@ -476,6 +477,52 @@ type .\index.html
 ### 바인드 마운트 없을 때 (my-custom-web:1.0 단독 실행): 이미지 안에 구워져 들어간 index.html을 그대로 보여줍니다.
 
 ### 바인드 마운트 있을 때 (-v 폴더:/usr/share/nginx/html): 내 컴퓨터 폴더가 컨테이너의 웹 폴더를 덮어쓰듯 연결되므로, 내 컴퓨터에서 index.html을 고치거나 지우면 웹 화면도 그 상태에 맞춰 바로 바낌
+
+이미지(Image): 앱을 찍어낸 원본 틀·설계도 같은 거라서 컨테이너를 지워도 기본적으로 남아 있음.
+
+데이터(Data): 컨테이너가 돌아가면서 생기는 기록이나 파일, 바뀐 내용 같은 거라서 컨테이너를 지우면 함께 지워질 수 있는 것.
+
+볼륨(Volume): 그 데이터를 컨테이너와 따로 떼어 도커가 관리하는 저장 공간에 보관해 줘서, 컨테이너를 지우고 새로 만들어도 데이터가 살아남게 해 주는 장치
+
+# 도커 볼륨 영속성 확인하기
+
+### 볼륨 만들기
+
+docker volume create my-web-vol
+
+### 볼륨을 연결해서 컨테이너 띄우기
+
+docker run -d -p 8080:80 --name my-vol-web -v my-web-vol:/usr/share/nginx/html nginx:alpine
+
+### 볼륨 쪽(index.html)에 테스트 문구 남기기
+
+docker exec my-vol-web sh -c 'echo "<h1>Volume Data Survived!</h1>" > /usr/share/nginx/html/index.html'
+
+### 컨테이너 삭제 후 새 컨테이너로 다시 연결하기
+
+docker rm -f my-vol-web
+docker run -d -p 8080:80 --name my-vol-web-2 -v my-web-vol:/usr/share/nginx/html nginx:alpine
+
+http://localhost:8080)를 새로고침(F5)했을 때 아까 넣었던 Volume Data Survived!가 그대로 보이면 볼륨 영속성 검증 성공
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
