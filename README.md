@@ -237,6 +237,7 @@ ls -l apple.txt
 
 <img width="457" height="182" alt="image" src="https://github.com/user-attachments/assets/500eac43-c3d9-4521-a0f2-1a3e61898d11" />
 
+Windows PowerShell 환경에서 진행하여 systemctl status docker 대신 docker --version, docker info, docker ps 실행 결과로 도커 버전 및 데몬 작동 상태를 확인·캡처했습니다.
 
 docker run hello-world
 
