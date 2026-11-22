@@ -421,6 +421,8 @@ PowerShell 프롬프트가 C:\Users\lightview117307\Desktop>처럼 Desktop 폴�
 
 ### 바인드 마운트로 웹 컨테이너 띄우기
 
+* 포트 매핑 과정 연결  run은 컨테이너 띄우기 
+* 
 docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine
 
 <img width="941" height="286" alt="image" src="https://github.com/user-attachments/assets/103da4a8-aaee-424b-9d66-79969a093bb9" />
@@ -432,11 +434,48 @@ docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" ng
 크롬이나 엣지 주소창에 http://localhost:8080(또는 [http://127.0.0.1:8080](http://127.0.0.1:8080))을 입력하고 Enter.
 
 
-2. index.html 내용 바꾸고 확인하기
+
+* 
+"<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
+
+그다음 브라우저에서 http://localhost:8080을 새로고침(F5)했을 때 Bind Mount Works!가 뜨면 바인드 마운트 반영 검증 완료입니다!
+
+
+404 Not Found가 뜨는 건 도커 엔진이 고장 나서라기보다, 지금 연결된 폴더(또는 컨테이너의 웹 경로)에 index.html 파일이 없거나 비어 있어서 웹 서버가 파일을 못 찾았다는 뜻.
+
+아까는 Hello, Docker Build!가 나왔을까
+my-custom-web:1.0 이미지 안에는 처음에 Hello, Docker Build!가 담긴 index.html이 복사되어 들어가 있음.
+
+바인드 마운트 없이 my-custom-web:1.0으로 띄우면 이미지 안에 들어 있던 파일 그대로 화면에 보여줍니다.  포트 매핑 -p 8080:80은 백업이 아니라 내 컴퓨터 포트와 컨테이너 포트를 연결해 주는 통로
+왜 지금은 Not Found가 떴을까?
+바인드 마운트(-v ...:/usr/share/nginx/html)를 걸면, 이미지 안의 파일 대신 내 컴퓨터 폴더(Desktop) 안의 파일을 바라보게 됩니다.
+
+만약 Desktop 폴더에 index.html이 없거나, 명령어를 수정·입력하는 과정에서 파일이 제대로 만들어지지 않았거나 내용이 비어버리면 Nginx가 보여줄 페이지가 없어서 404 Not Found가 떠요.
+
+### Desktop 폴더에 index.html을 다시 제대로 만들기
+
+index.html 내용 바꾸고 확인하기
+
+ 바인드 마운트 자료 연결 과정
 
 "<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
 
 그다음 브라우저에서 http://localhost:8080을 새로고침(F5)했을 때 Bind Mount Works!가 뜨면 바인드 마운트 반영 검증 완료입니다!
+
+
+### 파일이 잘 생겼는지 확인
+
+type .\index.html
+
+<h1>Bind Mount Works!</h1>가 화면에 찍히면 파일이 정상 생성된 것입니다.
+
+그다음 브라우저에서 http://localhost:8080을 새로고침(F5)해 보세요.
+
+만약 my-bind-web 컨테이너가 아직 안 떠 있는 상태라면, 먼저 docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine으로 띄운 뒤에 확인하시면 됩니다.
+
+### 바인드 마운트 없을 때 (my-custom-web:1.0 단독 실행): 이미지 안에 구워져 들어간 index.html을 그대로 보여줍니다.
+
+### 바인드 마운트 있을 때 (-v 폴더:/usr/share/nginx/html): 내 컴퓨터 폴더가 컨테이너의 웹 폴더를 덮어쓰듯 연결되므로, 내 컴퓨터에서 index.html을 고치거나 지우면 웹 화면도 그 상태에 맞춰 바로 바낌
 
 
 
