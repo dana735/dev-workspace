@@ -318,20 +318,28 @@ cat Dockerfile
 나만의 웹페이지(`index.html`)를 담은 맞춤형 웹 서버 설계도 만들기
 
 1. **편집기 열기:** `nano Dockerfile`메모장 
-2. 
-3. **설계도 내용 작성 (편집기 내부에 입력):**
+ 
+2. **설계도 내용 작성 (편집기 내부에 입력):**
    * `FROM nginx:alpine` : 가벼운 버전의 nginx 웹 서버를 기본 틀로 사용
    * `COPY index.html /usr/share/nginx/html/index.html` : 내 `index.html` 파일을 컨테이너 내부 웹 서버 경로로 복사
-4. **저장 및 종료 단축키:** `Ctrl + O` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
+   * 
+3. **저장 및 종료 단축키:** `Ctrl + s` (저장) ➔ `Enter` (확인) ➔ `Ctrl + X` (나가기)
 
-🛠️ [3. 이미지 빌드하기] & [웹서버 실행] 완벽 정리본
-
+###🛠️ [3. 이미지 빌드하기] & [웹서버 실행] 완벽 정리본
 
 docker build -t my-custom-web:1.0 .
 
 - . 꼭!! 현재 폴더 도크 파일 사용하겠다!
 
-- docker build: 아까 작성한 Dockerfile(설계도)을 바탕으로 이미지를 조립(빌드)하겠다는 뜻입니다.-t my-custom-web:1.0: 내가 만든 이미지에 이름(my-custom-web)과 버전(1.0)표시(Tag)를 붙여주는 옵션입니다.   . (마지막 점): "꼭 현재 폴더(.)"에 있는 Dockerfile을 사용해서 빌드하라는 뜻으로, 이 점을 빼먹으면 에러가 납니다!   
+- docker build: 아까 작성한 Dockerfile(설계도)을 바탕으로 이미지를 조립(빌드)하겠다는 뜻입니다.
+-
+- -t my-custom-web:1.0: 내가 만든 이미지에 이름(my-custom-web)과 버전(1.0)표시(Tag)를 붙여주는 옵션입니다.
+-
+-     . (마지막 점): "꼭 현재 폴더(.)"에 있는 Dockerfile을 사용해서 빌드하라는 뜻으로, 이 점을 빼먹으면 에러가 납니다!
+- 마지막 점 앞에 한칸 띄우기
+
+- <img width="1337" height="421" alt="image" src="https://github.com/user-attachments/assets/0dd28b8a-06de-47cf-a619-0fe2d6e3caf2" />
+
 
 #4.빌드된 이미지 확인
 
@@ -341,7 +349,8 @@ image
 
 my-custom-web:1.0 이미지 이름 보이면 성공 web 뒤:1.0이 방금 내가 만든 거 이름
 
-이미지 ID 1ee~ c8a 두개 아마 도커 파일에 두번 복사되어서 그런듯
+<img width="677" height="85" alt="image" src="https://github.com/user-attachments/assets/f74b51ca-38c6-4a6a-832c-c77df0d5cbc2" />
+
 
 ~my-web-site 폴더내 작업 수행인뜻
 
@@ -362,14 +371,17 @@ docker run: 이미지 기반으로 컨테이너(실행 중인 프로그램)를 �
   -  
  --name my-web-container: 실행될 컨테이너의 이름을 my-web-container라고 지어준다.
 
- - my-custom-web:1.0: 어떤 이미지를 바탕으로 실행할 것인가? (아까 우리가 위에서 빌드한 그 이미지 이름!)   
-- 
+ - my-custom-web:1.0: 어떤 이미지를 바탕으로 실행할 것인가? (아까 우리가 위에서 빌드한 그 이미지 이름!)
+ -  
+- <img width="1295" height="79" alt="image" src="https://github.com/user-attachments/assets/60cb1f84-cbed-4a90-8d83-d63df4e95aad" />
+
 
 #1 컨테이너 실행확인
 
 docker ps
 
-image
+
+<img width="1872" height="152" alt="image" src="https://github.com/user-attachments/assets/d88dc3fc-3c8e-44b3-af55-f7854a280477" />
 
 my-web-sever 또는 my-web container 보이면 성공
 
@@ -377,7 +389,8 @@ my-web-sever 또는 my-web container 보이면 성공
 
 Hello,Docker Build!
 
-image
+<img width="541" height="137" alt="image" src="https://github.com/user-attachments/assets/8db87300-9482-41fe-974c-4054c5b94a7e" />
+
 
 1️⃣ 첫 번째 구역: 실행 중이던 컨테이너 끄고 지우기 (뒷정리)
 
