@@ -461,6 +461,7 @@ my-custom-web:1.0 이미지 안에는 처음에 Hello, Docker Build!가 담긴 i
 
 type .\index.html
 
+
 <h1>Bind Mount Works!</h1>가 화면에 찍히면 파일이 정상 생성]
 
 
