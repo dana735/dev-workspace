@@ -83,6 +83,10 @@ C:-workspace>cd scripts
 
 C:-workspace>
 
+
+<img width="941" height="439" alt="image" src="https://github.com/user-attachments/assets/7504ba47-3aa6-4c00-b493-bb2260f24812" />
+
+
 #5.삭제
 
 PS C:-workspace> rm scripts
