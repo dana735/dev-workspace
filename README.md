@@ -233,7 +233,10 @@ ls -l apple.txt
 <img width="910" height="80" alt="image" src="https://github.com/user-attachments/assets/b80917c9-bc71-449c-9252-8d8fca080310" />
 
 
-버전 표시
+버전 표시 info
+
+<img width="457" height="182" alt="image" src="https://github.com/user-attachments/assets/500eac43-c3d9-4521-a0f2-1a3e61898d11" />
+
 
 docker run hello-world
 
