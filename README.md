@@ -127,15 +127,21 @@ dev-workspace 폴더 없어짐
 리눅스로 옮김
 
 touch test.txt # 빈 파일 생성
+
 ls # 파일 목록 확인
+
+<img width="373" height="101" alt="image" src="https://github.com/user-attachments/assets/28d50b4d-8c60-486c-99b9-6462a4d9d4e6" />
+
 
 echo “Hello, World!” > hello.txt 파일안으로 >
 cat 파일 화면 출력 내용 확인
 cat hello.txt
 
-echo “I am a linux master” > memo.txt
+hello.txt> memo.txt
 
 echo “I love Docker” >> memo.txt
+
+<img width="531" height="490" alt="image" src="https://github.com/user-attachments/assets/c06e825d-6f04-41be-8b71-620914d46eb5" />
 
 내용 추가 (Append)
 
