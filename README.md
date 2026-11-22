@@ -112,6 +112,12 @@ PS C:-workspace>
 
 PS C:-workspace> ls -Force
 
+cmd 에서 재실행 rmdir /s/dev-workspace  
+
+<img width="798" height="526" alt="image" src="https://github.com/user-attachments/assets/51fcf17e-ce1d-45e6-a13b-fe411c98bc57" />
+
+dev-workspace 폴더 없어짐
+
 ```
 # (현재는 비어있으므로 아무것도 나오지 않거나 . 과 .. 만 보입니다)
 ```
