@@ -273,12 +273,14 @@ docker rm 컨테이너_ID 도커는 아이디 앞 세자리만 해도 됨
 - 이미지 삭제 (설계도)
 
 docker rmi hello-world
+docker images 확인
+<img width="1016" height="275" alt="image" src="https://github.com/user-attachments/assets/4c219c72-6d34-49cc-8ca4-408897f03511" />
 
 docker rmi hello-world my-web-server
 
 ㅇocker system prune 한번에 지우기
 
-## 5 확인
+## 5 컨테이너 삭제 확인
 
 docker ps -a
 
