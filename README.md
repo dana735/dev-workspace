@@ -229,6 +229,9 @@ ls -l apple.txt
 
 ## 1 docker –version
 
+<img width="910" height="80" alt="image" src="https://github.com/user-attachments/assets/b80917c9-bc71-449c-9252-8d8fca080310" />
+
+
 버전 표시
 
 docker run hello-world
@@ -240,7 +243,10 @@ docker run hello-world
 
 ## 2 이미지 컨테이너 목록 확인및 정리 흔적이 있는가
 
-docker ps -a all
+docker ps -a 
+
+<img width="1319" height="176" alt="image" src="https://github.com/user-attachments/assets/6c234732-dd91-4693-881a-e005253b1980" />
+
 
 NAME hello-world 컨테이너 STATUS Exited 실행흔적 뜻 잘실행
 
@@ -250,13 +256,19 @@ image
 
 docker images
 
+<img width="872" height="166" alt="image" src="https://github.com/user-attachments/assets/a9a9a781-4814-43a6-9835-558ef5eea151" />
+
 레지스토리에 hello-world 보임
 
 ## 4 컨테이너 삭제
 
-docker rm [컨테이너_ID] 도커는 아이디 앞 세자리만 해도 됨
+docker rm 컨테이너_ID 도커는 아이디 앞 세자리만 해도 됨
 
-docker rm 705 20b a5c 세개 만들어져 있었음
+<img width="1287" height="160" alt="image" src="https://github.com/user-attachments/assets/a9f98422-53ed-438c-84c0-fad4937d9e48" />
+
+삭제
+
+<img width="672" height="64" alt="image" src="https://github.com/user-attachments/assets/2ce5eec8-aaf1-4a98-86d0-c399c06b8dd7" />
 
 - 이미지 삭제 (설계도)
 
@@ -269,6 +281,8 @@ docker rmi hello-world my-web-server
 ## 5 확인
 
 docker ps -a
+
+<img width="892" height="104" alt="image" src="https://github.com/user-attachments/assets/7f35e525-a11a-41ba-be44-5c943e64cc4b" />
 
 docker images
 
