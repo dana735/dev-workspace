@@ -422,7 +422,7 @@ PowerShell 프롬프트가 C:\Users\lightview117307\Desktop>처럼 Desktop 폴�
 
 ### 바인드 마운트로 웹 컨테이너 띄우기
 
-* 포트 매핑 과정 연결  run은 컨테이너 띄우기 
+1. 포트 매핑 과정 연결  run은 컨테이너 띄우기 
 * 
 docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" nginx:alpine
 
@@ -435,8 +435,7 @@ docker run -d -p 8080:80 --name my-bind-web -v "${PWD}:/usr/share/nginx/html" ng
 크롬이나 엣지 주소창에 http://localhost:8080(또는 [http://127.0.0.1:8080](http://127.0.0.1:8080))을 입력하고 Enter.
 
 
-
-* 
+ 
 "<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
 
 그다음 브라우저에서 http://localhost:8080을 새로고침(F5)했을 때 Bind Mount Works!가 뜨면 바인드 마운트 반영 검증 완료입니다!
@@ -453,11 +452,24 @@ my-custom-web:1.0 이미지 안에는 처음에 Hello, Docker Build!가 담긴 i
 
 만약 Desktop 폴더에 index.html이 없거나, 명령어를 수정·입력하는 과정에서 파일이 제대로 만들어지지 않았거나 내용이 비어버리면 Nginx가 보여줄 페이지가 없어서 404 Not Found가 떠요.
 
+ [***이럴때는
+ 1.Desktop 폴더에 index.html을 다시 제대로 만들기
+ 
+"<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
+
+2.파일이 잘 생겼는지 확인하기
+
+type .\index.html
+
+<h1>Bind Mount Works!</h1>가 화면에 찍히면 파일이 정상 생성]
+
+
+
 ### Desktop 폴더에 index.html을 다시 제대로 만들기
 
 index.html 내용 바꾸고 확인하기
 
- 바인드 마운트 자료 연결 과정
+ 바인드 마운트 자료 연결 과정임
 
 "<h1>Bind Mount Works!</h1>" | Out-File -FilePath .\index.html -Encoding utf8
 
